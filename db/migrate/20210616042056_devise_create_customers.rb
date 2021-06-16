@@ -11,7 +11,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       t.string :postcode
       t.string :address
       t.string :phone_number
-      t.string :is_valid, default: true
+      t.boolean :is_valid, default: true
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_055809) do
     t.string "postcode"
     t.string "address"
     t.string "phone_number"
-    t.string "is_valid", default: "t"
+    t.boolean "is_valid", default: true
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_055809) do
   end
 
   create_table "shipping_addresses", force: :cascade do |t|
-    t.string "customer_id"
+    t.integer "customer_id"
     t.string "name"
     t.string "address"
     t.string "postcode"
