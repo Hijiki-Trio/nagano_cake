@@ -1,2 +1,19 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="container">
+  <div class="main-visual">
+    <h1 class="main-introduction">Welcome to Nagano Cake</h1>
+    <%= image_tag('homes/poundcake.webp', class: 'main-image d-block mx-auto') %>
+    <p>
+      素材にこだわった商品をご用意しています。<br>
+      午後のひとときにいかがでしょうか。
+    </p>
+  </div>
+  <h3 class="sub-introduction">New</h3>
+  <ul class="new_products">
+    <li><%= image_tag('homes/shortcake.jpg') %></li>
+    <li><%= image_tag('homes/donuts.webp') %></li>
+    <li><%= image_tag('homes/chocolate.webp') %></li>
+  </ul>
+  <div class="btn-to-detail">
+    <%= link_to "全ての商品を見る", products_path, class: 'btn btn-sm btn-info' %>
+  </div>
+</div>
