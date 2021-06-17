@@ -1,3 +1,36 @@
 // Place all the styles related to the admin/products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bacimage {
+  height: 700px;
+  background-color: white;
+  background-image:  image-url('admins/547079.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title-text {
+  display: flex;
+  justify-content: center;
+  padding-right: 50%;
+  padding-top: 4%;
+
+}
+
+.date {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  opacity: 0.8;
+
+}
+
+.niw-item {
+width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}

@@ -1,2 +1,8 @@
-<h1>Public::Homes#about</h1>
-<p>Find me in app/views/public/homes/about.html.erb</p>
+<div class="container about-wrapper">
+  <%= image_tag('homes/shortcake.jpg', class: 'about-image') %>
+  <p>
+    Nagano Cakeでは、厳選した素材と旬を取り入れたフルーツを使用しています。<br>
+    パティシエが一つ一つ心を込めて手作りしたスイーツで、素敵な午後のひと時をお過ごし下さい。<br>
+    全国配送も承っております。注文には<%= link_to "こちら", new_customer_registration_path %>から会員登録が必要です。
+  </p>
+</div>
