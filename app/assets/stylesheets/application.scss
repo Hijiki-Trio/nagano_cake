@@ -14,3 +14,51 @@
  *= require_self
  */
 @import "bootstrap";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ece9e3;
+}
+
+body #content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ナビゲーション
+---------------------------- */
+
+nav {
+  height: 80px;
+  display: inline-block;
+  background-color: #c9b090;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
+}
+
+.nav-item {
+  margin: 0 20px;
+}
+
+.nav-item a {
+  color: #000000;
+}
+
+
+/* フッター
+---------------------------- */
+
+footer {
+  //フッターを最下部に固定
+  margin-top: auto;
+  background-color: #cd9f8e;
+}
