@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   sessions: 'admins/sessions'
   }
   
+  namespace :admin do
+    resources :products
+    post 'products' => 'products#create'
+  end
 end
