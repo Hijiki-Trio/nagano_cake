@@ -33,5 +33,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :genres, only: [:index, :edit, :create, :update]
   end
 end
