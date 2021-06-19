@@ -1,7 +1,7 @@
 <body>
   <main class="bacimage">
     <h4 class="title-text">商品編集</h4>
-        <%= form_with model:@product, local:true do |f| %>
+        <%= form_with model: [:admin, @product], local:true do |f| %>
             <h4>商品画像</h4>
 
             <th>
