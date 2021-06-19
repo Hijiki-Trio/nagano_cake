@@ -1,3 +1,61 @@
 // Place all the styles related to the public/products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* products#index
+---------------------------- */
+
+.index-wrapper h3 {
+  margin: 30px 0;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-index-image {
+  width: 200px;
+  height: 150px;
+  margin-right: 30px;
+  border-radius: 5%;
+}
+
+.product-index h4 {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.product-index h5 {
+  margin-bottom: 50px;
+  font-size: 15px;
+}
+
+/* products#show
+---------------------------- */
+
+.show-wrapper {
+  margin: 100px auto;
+}
+
+.product-introduction {
+  margin-left: 30px;
+}
+
+.product-introduction h4 {
+  margin: 20px 0;
+}
+
+.product-introduction h5 {
+  font-size: 15px;
+}
+
+.product-show-image {
+  width: 400px;
+  height: 300px;
+  border-radius: 5%;
+}
+
+.add-cart {
+  margin: 20px 0;
+}
