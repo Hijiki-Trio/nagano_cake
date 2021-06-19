@@ -1,76 +1,37 @@
-
-  <body>
-    <main class="bacimage">
-      <h4 class="title-text">商品一覧</h4>
-      <div><%= link_to "新規", new_admin_product_path %></div>
-      <div class="date">
-        <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
-          <thead>
+<body>
+  <main class="bacimage">
+    <h4 class="title-text">商品一覧</h4>
+    <div></div>
+    <%= link_to "十", new_admin_product_path, class: "btn btn--circle btn--circle-c btn--shadow fas fa-arrow-up" %>
+    
+  
+    <div class="btnripple">
+    <div class="date">
+      <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
+        <thead>
+          <th>
+            <td>商品ID</td>
+            <td>商品名</td>
+            <td>税込価格</td>
+            <td>ジャンル</td>
+            <td>ステータス</td>
+          </th>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+          <tr>
             <th>
-              <td>商品ID</td>
-              <td>商品名</td>
-              <td>税込価格</td>
-              <td>ジャンル</td>
-              <td>ステータス</td>
+              <td><%= product.id %></td>
+              <td><%= link_to product.name, admin_product_path(product.id) %></td>
+              <td><%= product.price %></td>
+              <td>ケーキ</td>
+              <td>販売中</td>
             </th>
-          </thead>
-          <tbody>
-            <tr class="table-active">
-              <th>
-                <td>1</td>
-                <td>洋梨のチーズタルト</td>
-                <td>1,200</td>
-                <td>ケーキ</td>
-                <td>販売中</td>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <td>2</td>
-                <td>ザッハトルテ</td>
-                <td>2,900</td>
-                <td>ケーキ</td>
-                <td>販売中</td>
-              </th>
-            </tr>
-            <tr class="table-active">
-              <th>
-                <td>3</td>
-                <td>モンブラン</td>
-                <td>500</td>
-                <td>ケーキ</td>
-                <td>販売中</td>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <td>4</td>
-                <td>卵たっぷり濃厚プリン</td>
-                <td>500</td>
-                <td>プリン</td>
-                <td>販売中</td>
-              </th>
-            </tr>
-            <tr class="table-active">
-              <th>
-                <td>5</td>
-                <td>紅茶のクッキー</td>
-                <td>800</td>
-                <td>焼き菓子</td>
-                <td>販売中</td>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <td>6</td>
-                <td>フルーツタルト</td>
-                <td>2,900</td>
-                <td>ケーキ</td>
-                <td>販売停止中</td>
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </body>
+          </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>

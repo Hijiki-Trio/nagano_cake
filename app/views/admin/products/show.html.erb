@@ -1,2 +1,15 @@
-<h1>Admin::Products#show</h1>
-<p>Find me in app/views/admin/products/show.html.erb</p>
+<body>
+  <main class="bacimage">
+    <h4 class="title-text">商品詳細</h4>
+<%= link_to "編集", edit_admin_product_path(@product.id) %>
+
+        <div class="row my-2">
+          <div class="col">商品名</div>
+          <div class="col"><%= @product.name %></div>
+        </div>
+        <div class="row my-2">
+          <div class="col">商品説明</div>
+          <div class="col"><%= @product.detail %></div>
+        </div>
+  </main>
+</body>
