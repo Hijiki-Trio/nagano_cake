@@ -1,0 +1,25 @@
+<body>
+  <main class="bacimage">
+    <h4 class="title-text">商品編集</h4>
+        <%= form_with model:@product, local:true do |f| %>
+            <h4>商品画像</h4>
+
+            <th>
+                <td>
+                  <h4>商品名</h4>
+                </td>
+                <td>
+                  <div><%= f.text_field :name %></div>
+                </td>
+            </th>
+
+
+              <h4>商品説明</h4>
+              <%= f.text_area :detail %>
+              <h4>税抜価格</h4>
+             <%= f.text_field :price %>
+              <div><%= f.submit '投稿' %></div>
+
+        <% end %>
+  </main>
+</body>
