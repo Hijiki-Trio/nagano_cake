@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   attachment :image
   
-  belongs_to :genres
+  belongs_to :genre
   
 end
