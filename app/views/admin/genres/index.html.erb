@@ -1,6 +1,6 @@
 <h3>ジャンル一覧・追加</h3>
 
-<%= form_with to_model: [:admin, @genre], local:true do |f| %>
+<%= form_with model: [:admin, @genre], local:true do |f| %>
 <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control" %>
 <%= f.submit '新規登録' %>
 <% end %>
@@ -14,11 +14,19 @@
     </th>
   </thead>
   <tbody>
+<<<<<<< HEAD
     <% @genre.each do |genre| %>
     <tr>
       <th>
         <td><%= genre.name %></td>
         <td><%= link_to edit_admin_genre_path(genre.id) %></td>
+=======
+    <% @genres.each do |genre| %>
+    <tr>
+      <th>
+        <td><%= genre.name %></td>
+        <td><%= link_to "編集", edit_admin_genre_path(genre.id) %></td>
+>>>>>>> 7b6dc20366d9781963da8b77f0fd6e67ec3200ff
       </th>
     </tr>
     <% end %>
