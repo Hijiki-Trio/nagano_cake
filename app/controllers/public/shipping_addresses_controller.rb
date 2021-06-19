@@ -6,8 +6,8 @@ class Public::ShippingAddressesController < ApplicationController
   end
   
   def create
-      @shipping_addressnew = ShippingAddress.new(shipping_address_params) 
-      @shipping_addressnew.customer_id =  current_customer.id 
+      @shipping_addressnew = ShippingAddress.new(shipping_address_params)
+      @shipping_addressnew.customer_id = current_customer.id 
     if @shipping_addressnew.save 
       redirect_back(fallback_location: root_path)
     else
