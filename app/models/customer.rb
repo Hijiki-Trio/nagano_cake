@@ -7,4 +7,6 @@ class Customer < ApplicationRecord
   def active_for_authentication?
     super && (self.is_valid == true)
   end
+  
+  has_many :shipping_addresses, dependent: :destroy
 end
