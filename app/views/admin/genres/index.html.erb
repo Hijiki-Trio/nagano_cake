@@ -14,19 +14,11 @@
     </th>
   </thead>
   <tbody>
-<<<<<<< HEAD
-    <% @genre.each do |genre| %>
-    <tr>
-      <th>
-        <td><%= genre.name %></td>
-        <td><%= link_to edit_admin_genre_path(genre.id) %></td>
-=======
     <% @genres.each do |genre| %>
     <tr>
       <th>
         <td><%= genre.name %></td>
         <td><%= link_to "編集", edit_admin_genre_path(genre.id) %></td>
->>>>>>> 7b6dc20366d9781963da8b77f0fd6e67ec3200ff
       </th>
     </tr>
     <% end %>
