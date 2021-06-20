@@ -13,18 +13,22 @@ class Admin::ProductsController < ApplicationController
   
   def new
     @product = Product.new
+    @genres = Genre.all
   end
     
   def index
     @products = Product.all
+    @genres = Genre.all
   end
 
   def show
     @product = Product.find(params[:id])
+    @genre = Genre.find(params[:id])
   end
   
   def edit
     @product = Product.find(params[:id])
+    @genres = Genre.all
   end
   
   def update
