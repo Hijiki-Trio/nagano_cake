@@ -10,26 +10,22 @@ class Public::CartProductsController < ApplicationController
   def create
     @cart_product = current_customer.cart_products.new(cart_product_params)
     @cart_product.product_id
-    # カートに既に同じ商品が入っていたら？
-    @cart_product.quantity += params[:quantity].to_i
-    if @cart_product.save
+
+    # カートに既に同じ商品が入っていたら数量を変更、そうでなければ新しく追加
+    if current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id]).present?
+      @cart_product = current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id])
+      @cart_product.quantity += params[:cart_product][:quantity].to_i
+      @cart_product.save
       redirect_to cart_products_path
     else
-      redirect_to products_path
+      @cart_product.save
+      redirect_to cart_products_path
     end
 
-
-    # @cart_product = current_cart.cart_products.build(product_id: [params:product_id]) if @cart_product.blank?
-    # @cart_product.quantity += params[:quantity].to_i
-    # end
-    # if @cart_product.save
-    #   redirect_to cart_products_path
-    # else
-    #   redirect_to products_path
-    # end
   end
 
   def update
+    
   end
 
   def destroy
