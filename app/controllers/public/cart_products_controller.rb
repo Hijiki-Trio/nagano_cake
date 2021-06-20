@@ -1,7 +1,7 @@
 class Public::CartProductsController < ApplicationController
 
   before_action :authenticate_customer!
-  before_action :setup_cart_product!, only: [:update, :destroy, :destroy_all]
+  # before_action :setup_cart_product!, only: [:update, :destroy, :destroy_all]
 
   def index
     @cart_products = current_customer.cart_products
@@ -21,28 +21,31 @@ class Public::CartProductsController < ApplicationController
       @cart_product.save
       redirect_to cart_products_path
     end
-
   end
 
   def update
-    
+    @cart_product = CartProduct.find(params[:id])
+    @cart_product.update(quantity: params[:quantity].to_i)
+    redirect_to cart_products_path
   end
 
   def destroy
+    @cart_product = CartProduct.find(params[:id])
     @cart_product.destroy
     redirect_to cart_products_path
   end
 
   def destroy_all
+    @cart_products = current_customer.cart_products
     @cart_products.destroy
     redirect_to cart_products_path
   end
 
   private
 
-    def setup_cart_product!
-      @cart_product = current_cart.cart_products.find_by(product_id: params[:product_id])
-    end
+    # def setup_cart_product!
+    #   @cart_product = current_cart.cart_products.find_by(product_id: params[:product_id])
+    # end
 
     def cart_product_params
       params.require(:cart_product).permit(:quantity, :product_id)
