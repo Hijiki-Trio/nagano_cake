@@ -34,5 +34,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
     resources :genres, only: [:index, :edit, :create, :update]
+    resources :customers, only: [:index, :show, :edit, :update]  #追加しました。
   end
 end
