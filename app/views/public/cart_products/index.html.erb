@@ -12,16 +12,16 @@
       <% @cart_products.each do |cart_product| %>
       <tr>
         <td>
-          <%= attachment_image_tag cart_product, :image, class: 'cart-product-index-image' %>
-          <%= cart_product.name %>
+          <%= attachment_image_tag cart_product.product, :image, class: 'cart-product-index-image' %>
+          <%= cart_product.product.name %>
         </td>
-        <td><%= cart_product.price %></td>
+        <td><%= cart_product.product.price %></td>
         <td>
           <%= f.select :quantity, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5}, {include_blank: '個数選択'}, class: "form-control col mr-3" %>
           <%= link_to "編集", cart_product_path(cart_product), class: "btn btn-sm btn-info" %>
         </td>
         <td>3,300</td>
-        <td><%= link_to "削除する", cart_product_path(cart_product), local:true, method: :delete, class: "btn btn-sm btn-danger" %></td>
+        <td><%= link_to "削除する", cart_product_path(cart_product), method: :delete, class: "btn btn-sm btn-danger" %></td>
       </tr>
       <% end %>
       <tr>
