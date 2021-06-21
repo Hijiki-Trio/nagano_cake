@@ -45,8 +45,13 @@ nav {
   font-family: "Dancing Script", cursive;
 }
 
+.navbar-collapse {
+  background-color: #c9b090;
+}
+
 .nav-item {
   margin: 0 20px;
+  padding: 10px 0;
 }
 
 .nav-item a {
