@@ -4,7 +4,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.genre_id = params[:product][:genre][:genre_id]  #うまくいかなかったので、直接情報を追加しました。
     if @product.save
      redirect_to admin_products_path
     else
@@ -35,7 +34,6 @@ class Admin::ProductsController < ApplicationController
   
   def update
     @product = Product.find(params[:id])
-    @product.genre_id = params[:product][:genre][:genre_id] 
     if @product.update(product_params)
      redirect_to admin_products_path
     else
