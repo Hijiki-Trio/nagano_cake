@@ -5,8 +5,16 @@
 /* products#index
 ---------------------------- */
 
+.index-wrapper {
+  margin: 50px auto;
+}
+
 .index-wrapper h3 {
-  margin: 30px 0;
+  margin: 20px auto;
+}
+
+.product-show-image-wrapper {
+  text-align: center;
 }
 
 .products {
