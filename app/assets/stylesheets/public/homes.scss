@@ -5,11 +5,35 @@
 /* homes#top
 ---------------------------- */
 
+#slideshow-container {
+  height: 500px;
+}
+
+.image1 {
+  background-image: image-url("homes/shortcake.jpg");
+}
+
+.image2 {
+  background-image: image-url("homes/donuts.webp");
+}
+
+.image3 {
+  background-image: image-url("homes/poundcake.webp");
+}
+
+.image4 {
+  background-image: image-url("homes/chocolate.webp");
+}
+
 .main-introduction {
   margin: 50px auto;
   font-size: 70px;
   text-align: center;
   font-family: "Dancing Script", cursive;
+}
+
+.main-top-image {
+  width: 100%;
 }
 
 .main-image {
@@ -26,6 +50,7 @@
 
 .sub-introduction {
   text-align: center;
+  border-bottom: solid 1px #000000;
   font-family: "Dancing Script", cursive;
 }
 
