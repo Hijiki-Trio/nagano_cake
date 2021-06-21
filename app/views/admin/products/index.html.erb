@@ -3,8 +3,8 @@
     <h4 class="title-text">商品一覧</h4>
     <div></div>
     <%= link_to "十", new_admin_product_path, class: "btn btn--circle btn--circle-c btn--shadow fas fa-arrow-up" %>
-    
-  
+
+
     <div class="btnripple">
     <div class="date">
       <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
@@ -23,9 +23,13 @@
             <th>
               <td><%= product.id %></td>
               <td><%= link_to product.name, admin_product_path(product.id) %></td>
-              <td><%= product.price %></td>
-              <td><%= product.genre %></td>
-              <td>販売中</td>
+              <td><%= product.price.to_s %></td>
+              <td><%= product.genre.name %></td>
+              <td><% if product.is_active == true %>
+              <span class="text-success">販売中</span>
+                <% else %>
+              <span class="text-secondary">販売停止</span>
+              <% end %></td>
             </th>
           </tr>
           <% end %>
