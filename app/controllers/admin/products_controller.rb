@@ -4,10 +4,12 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.genre_id = params[:product][:genre][:genre_id]  #うまくいかなかったので直接情報を追加しました。
     if @product.save
-    redirect_to admin_products_path
+     redirect_to admin_products_path
     else
-    render 'new'
+     @genres = Genre.all
+     render 'new'
     end
   end
   
@@ -23,7 +25,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @genre = Genre.find(params[:id])
+    @genres = Genre.all
   end
   
   def edit
@@ -33,14 +35,18 @@ class Admin::ProductsController < ApplicationController
   
   def update
     @product = Product.find(params[:id])
-    @product.update(product_params)
-    redirect_to admin_product_path(@product.id)
+    @product.genre_id = params[:product][:genre][:genre_id] 
+    if @product.update(product_params)
+     redirect_to admin_products_path
+    else
+     render :edit
+    end
   end
+  
   
  private
  
   def product_params
-    params.require(:product).permit(:name, :detail, :image, :price)
+    params.require(:product).permit(:name, :detail, :image, :price, :genre_id, :is_active)
   end
-
 end
