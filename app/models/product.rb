@@ -10,4 +10,5 @@ class Product < ApplicationRecord
   	(price*1.10).round
   end
   
+
 end
