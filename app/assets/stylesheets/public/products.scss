@@ -5,8 +5,16 @@
 /* products#index
 ---------------------------- */
 
+.index-wrapper {
+  margin: 50px auto;
+}
+
 .index-wrapper h3 {
-  margin: 30px 0;
+  margin: 20px auto;
+}
+
+.product-show-image-wrapper {
+  text-align: center;
 }
 
 .products {
@@ -15,8 +23,8 @@
 }
 
 .product-index-image {
-  width: 200px;
-  height: 150px;
+  width: 250px;
+  height: 180px;
   margin-right: 30px;
   border-radius: 5%;
 }
@@ -53,6 +61,7 @@
 .product-show-image {
   width: 400px;
   height: 300px;
+  margin: 0 auto;
   border-radius: 5%;
 }
 

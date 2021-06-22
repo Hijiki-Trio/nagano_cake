@@ -5,25 +5,12 @@
 /* cart_products#index
 ---------------------------- */
 
-.index-wrapper {
-  margin: 100px auto;
-}
-
-.index-wrapper h3 {
+.cart-index-wrapper {
   margin: 50px auto;
 }
 
-.cart-table {
-  display: flex;
-  justify-content: center;
-}
-
-.cart-table th {
-  padding: 20px;
-}
-
-.cart-table td {
-  padding: 20px;
+.cart-index-wrapper h3 {
+  margin: 20px auto;
 }
 
 .cart-product-index-image {

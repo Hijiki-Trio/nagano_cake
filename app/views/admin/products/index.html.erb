@@ -1,9 +1,8 @@
 <body>
   <main class="bacimage">
     <h4 class="title-text">商品一覧</h4>
-    <div></div>
-    <%= link_to "十", new_admin_product_path, class: "btn btn--circle btn--circle-c btn--shadow fas fa-arrow-up" %>
 
+    <%= link_to new_admin_product_path do %><i class="far fa-plus-square fa-3x text-dark"></i><% end %>
 
     <div class="btnripple">
     <div class="date">
@@ -12,7 +11,7 @@
           <th>
             <td>商品ID</td>
             <td>商品名</td>
-            <td>税込価格</td>
+            <td>税抜価格</td>
             <td>ジャンル</td>
             <td>ステータス</td>
           </th>
@@ -23,7 +22,7 @@
             <th>
               <td><%= product.id %></td>
               <td><%= link_to product.name, admin_product_path(product.id) %></td>
-              <td><%= product.price.to_s %></td>
+              <td><%= converting_to_jpy(product.price) %></td>
               <td><%= product.genre.name %></td>
               <td><% if product.is_active == true %>
               <span class="text-success">販売中</span>

@@ -18,7 +18,9 @@
            <div class="col"><%= @product.genre.name %></div>
         </div>
         <div class="row my-2">
-          (<%= converting_to_jpy(@product.tax_included) %>)<%= converting_to_jpy(@product.price) %>円
+          <div class="col">税込価格(税抜価格)</div>
+            <div class="col"><%= converting_to_jpy(@product.tax_included) %>(<%= converting_to_jpy(@product.price) %>)円</div>
+        </div>
         <div class="row my-2">
           <% if @product.is_active == true %>
         <div class="col">販売中</div>
@@ -28,6 +30,6 @@
         </div>
         <div class="row my-2">
          <div class="col"><%= link_to "編集", edit_admin_product_path(@product.id), class:"btn btn-success" %></div>
-        </div> 
+        </div>
   </main>
 </body>
