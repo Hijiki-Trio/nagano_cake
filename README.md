@@ -1,25 +1,31 @@
-# README
+# Nagano Cake
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DMM WEBCAMPのチーム開発で作成したECサイト
 
-Things you may want to cover:
+## 開発環境
 
-* Ruby version
+* Ruby 2.6.3
+* Ruby on Rails 5.2.5
 
-* System dependencies
+## 使用方法
 
-* Configuration
+```
+$ git clone https://github.com/Hijiki-Trio/nagano_cake.git
+$ cd nagano_cake
+$ bundle install
+$ rails db:migrate
+$ rails s
+```
 
-* Database creation
+## 機能
 
-* Database initialization
+* ログイン/ログアウト機能
+* 退会機能
+* 注文機能
+* カート機能
 
-* How to run the test suite
+## 作者
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# nagano_cake
+* あむ　　（@Amu-Y）
+* よっしー（@seikin123）
+* あかりん（@imaaa34）
