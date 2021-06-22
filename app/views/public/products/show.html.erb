@@ -9,7 +9,7 @@
         <h5>
           <%= @product.detail %>
         </h5>
-        <h5 class="price">¥<%= converting_to_jpy(@product.price) %><small>(税込)</small></h5>
+        <h5 class="price">¥<%= converting_to_jpy(@product.tax_included) %><small>(税込)</small></h5>
         <div class="add-cart form-group row">
           <%= form_with model: @cart_product, class: "d-flex", local:true do |f| %>
             <%= f.select :quantity, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5}, {include_blank: '個数選択'}, class: "form-control col mr-3" %>
