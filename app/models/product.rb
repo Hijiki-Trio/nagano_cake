@@ -10,5 +10,4 @@ class Product < ApplicationRecord
   def tax_included
   	(price*1.10).round
   end
-
 end
