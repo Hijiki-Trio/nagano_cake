@@ -202,15 +202,6 @@ Product.create!(
 )
 
 Product.create!(
-  genre_id: 5,
-  name: 'チョコレート',
-  detail: 'アーモンドやガナッシュなど12種類のチョコレート詰め合わせです。',
-  price: '3000',
-  image: open("./app/assets/images/products/chocolate.webp"),
-  is_active: true
-)
-
-Product.create!(
   genre_id: 1,
   name: 'ブルーベリータルト',
   detail: 'タルト生地にブルーベリーとラズベリーを飾りました。',
