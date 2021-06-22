@@ -12,7 +12,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id #カスタマー情報追加
     @order.save
-    @cart_products = current_customer.cart_product.all
+    @cart_products = current_customer.cart_product.all #注文履歴
      @cart_products.each do |cart_product|
        @order_products = @order.order_products.new
        @order_products.product_id = cart_product.product.id
