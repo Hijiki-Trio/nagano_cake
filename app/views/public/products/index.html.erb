@@ -7,8 +7,9 @@
           <%= attachment_image_tag product, :image, class: 'product-index-image' %>
         <% end %>
         <h4><%= product.name %></h4>
-        <h5>¥<%= converting_to_jpy(product.price) %></h5>
+        <h5>¥<%= converting_to_jpy(product.tax_included) %></h5>
       </div>
       <% end %>
+      <%= paginate @products %>
     </div>
   </div>
