@@ -12,15 +12,12 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id #カスタマー情報追加
     @order.save
-    @cart_products = current_customer.cart_product.all #注文履歴
+    @cart_products = current_customer.cart_products.all #注文履歴
      @cart_products.each do |cart_product|
-       @order_products = @order.order_products.new
-       @order_products.product_id = cart_product.product.id
-       @order_products.quantity = cart_product.quantity
-       @order_products.price = cart.price
-       current_customer.cart_product.destroy_all
-      end
-    redirect_to orders_conplete_parh
+      OrderProduct.create(product_id: cart_product.product.id, quantity: cart_product.quantity, price: cart_product.product.price, order_id: @order.id)
+     end
+    current_customer.cart_products.destroy_all
+    redirect_to orders_complete_path
   end
 
   def confirm #注文確認画面
