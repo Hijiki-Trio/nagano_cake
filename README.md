@@ -4,6 +4,10 @@ DMM WEBCAMPのチーム開発で作成したECサイト
 
 ## 設計
 
+### ER図
+
+<img width="690" alt="スクリーンショット 2021-06-23 11 06 22" src="https://user-images.githubusercontent.com/81577119/123023856-1ebb7180-d413-11eb-80e5-0ae48832cba5.png">
+
 ### アプリケーション詳細設計
 #### 管理者側
 
