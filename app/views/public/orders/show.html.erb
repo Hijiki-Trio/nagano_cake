@@ -1,66 +1,72 @@
 <div class="container orders-wrapper">
   <h3>注文履歴詳細</h3>
-    <div class="row orders-show-table">
-      <h4>注文情報</h4>
-      <table class="table table-striped">
-        <tr>
-          <th>注文日</th>
-          <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-        </tr>
-          <th>配送先</th>
-          <td>
-            <%= '〒' + @order.postcode %><br>
-            <%= @order.address %><br>
-            <%= @order.name %>
-          </td>
-        <tr>
-        </tr>
-          <th>支払い方法</th>
-          <td><%= @order.payment %></td>
-        <tr>
-        </tr>
-          <th>ステータス</th>
-          <td><%= @order.order_status %></td>
-        <tr>
-      </table>
+    <div class="row orders-show-table d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文情報</h4>
+        <table class="table table-striped">
+          <tr>
+            <th>注文日</th>
+            <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+            <th>配送先</th>
+            <td>
+              <%= '〒' + @order.postcode %><br>
+              <%= @order.address %><br>
+              <%= @order.name %>
+            </td>
+          <tr>
+          </tr>
+            <th>支払い方法</th>
+            <td><%= @order.payment %></td>
+          <tr>
+          </tr>
+            <th>ステータス</th>
+            <td><%= @order.order_status %></td>
+          <tr>
+        </table>
+      </div>
 
-      <h4>請求情報</h4>
-      <table class="table table-striped">
-        <tr>
-          <th>商品合計</th>
-          <td>¥<%=   %></td>
-        </tr>
-          <th>送料</th>
-          <td>¥<%= 800 %></td>
-        <tr>
-        </tr>
-          <th>ご請求額</th>
-          <td>¥<%= @order.total_price %></td>
-        <tr>
-      </table>
+      <div class="col-4">
+        <h4>請求情報</h4>
+        <table class="table table-striped">
+          <tr>
+            <th>商品合計</th>
+            <td>¥<%=   %></td>
+          </tr>
+            <th>送料</th>
+            <td>¥<%= 800 %></td>
+          <tr>
+          </tr>
+            <th>ご請求額</th>
+            <td>¥<%= @order.total_price %></td>
+          <tr>
+        </table>
+      </div>
     </div>
 
-
-    <div class="row order-show-table">
-      <h4>注文内容</h4>
-      <table class="table table-striped">
-      <% @order_products.each do |order_product| %>
-        <tr>
-          <th>商品</th>
-          <td><%= order_product.product.name %></td>
-        </tr>
-          <th>単価(税込)</th>
-          <td>¥<%= converting_to_jpy(order_product.product.tax_included) %></td>
-        <tr>
-        </tr>
-          <th>個数</th>
-          <td><%= order_product.quantity %></td>
-        <tr>
-        </tr>
-          <th>小計</th>
-          <td>¥<%= converting_to_jpy(order_product.product.tax_included * order_product.quantity) %></td>
-        <tr>
-      <% end %>
-      </table>
+    <div class="row order-show-table mt-5 d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文内容</h4>
+        <table class="table table-striped">
+        <% @order.products.each do |product| %>
+          <tr>
+            <th>商品</th>
+            <td><%= product.name %></td>
+          </tr>
+            <th>単価(税込)</th>
+            <td>¥<%= converting_to_jpy(product.tax_included) %></td>
+          <tr>
+          </tr>
+            <th>個数</th>
+            <td><%= product.order_products.quantity %></td>
+          <tr>
+          </tr>
+            <th>小計</th>
+            <td><%= converting_to_jpy(product.tax_included) * product.order_products.quantity %></td>
+          <tr>
+        <% end %>
+        </table>
+      </div>
+      <div class="col-4"></div>
     </div>
 </div>

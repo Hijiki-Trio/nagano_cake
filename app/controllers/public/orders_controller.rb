@@ -8,7 +8,6 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @cart_products = current_customer.order_products
   end
 
   def create
