@@ -1,11 +1,14 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
-  
-  
+
+
   def index
+    @orders = current_customer.orders
   end
 
   def show
+    @order = Order.find(params[:id])
+    @cart_products = current_customer.order_products
   end
 
   def create
@@ -28,17 +31,17 @@ class Public::OrdersController < ApplicationController
       @order.postcode = current_customer.postcode
       @order.address = current_customer.address
       @order.name = current_customer.last_name + current_customer.first_name
-      
+
     elsif params[:order][:address_option] == "1"  #登録済住所
-      @shipping_address = ShippingAddress.find(params[:order][:shipping_address_id]) 
+      @shipping_address = ShippingAddress.find(params[:order][:shipping_address_id])
       @order.postcode = @shipping_address.postcode
       @order.address = @shipping_address.address
       @order.name = @shipping_address.name
-      
+
     elsif params[:order][:address_option] == "2"  #新しい届け先
       @order.postcode = params[:order][:postcode]
-      @order.address = params[:order][:address] 
-      @order.name = params[:order][:name] 
+      @order.address = params[:order][:address]
+      @order.name = params[:order][:name]
     end
   end
 
@@ -49,9 +52,9 @@ class Public::OrdersController < ApplicationController
 
   def complete
   end
-  
+
   private
-  
+
   def order_params
     params.require(:order).permit(:postcode, :address, :name, :shipping, :total_price, :payment, :order_status, :customer_id)
   end
