@@ -4,12 +4,12 @@
       <% @products.each do |product| %>
       <div class="product-index">
         <%= link_to product_path(product) do %>
-          <%= attachment_image_tag product, :image, class: 'product-index-image' %>
+          <%= attachment_image_tag product, :image, class: 'product-index-image float' %>
         <% end %>
         <h4><%= product.name %></h4>
         <h5>¥<%= converting_to_jpy(product.tax_included) %></h5>
       </div>
       <% end %>
-      <%= paginate @products %>
     </div>
+    <div class="row justify-content-center"><%= paginate @products %></div>
   </div>

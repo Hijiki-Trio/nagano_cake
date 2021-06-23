@@ -17,10 +17,10 @@
   </div>
   <h3 class="sub-introduction">New Products</h3>
   <ul class="new_products my-4">
-    <li><%= image_tag('homes/shortcake.jpg') %></li>
-    <li><%= image_tag('homes/donuts.webp') %></li>
-    <li><%= image_tag('homes/chocolate.webp') %></li>
-    <li><%= image_tag('homes/poundcake.webp') %></li>
+    <li><%= link_to product_path(id: 3) do %><%= image_tag('products/chocolatecake.jpg', class: 'float') %><% end %></li>
+    <li><%= link_to product_path(id: 22) do %><%= image_tag('products/strawberrytart.jpg', class: 'float') %><% end %></li>
+    <li><%= link_to product_path(id: 21) do %><%= image_tag('products/blueberrycake.jpg', class: 'float') %><% end %></li>
+    <li><%= link_to product_path(id: 12) do %><%= image_tag('products/vagepoundcake.jpg', class: 'float') %><% end %></li>
   </ul>
   <div class="btn-to-detail">
     <%= link_to "　全ての商品を見る　", products_path, class: 'btn btn-sm btn-secondary' %>

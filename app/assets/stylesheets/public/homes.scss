@@ -10,19 +10,19 @@
 }
 
 .image1 {
-  background-image: image-url("homes/shortcake.jpg");
+  background-image: image-url("products/shortcake.jpg");
 }
 
 .image2 {
-  background-image: image-url("homes/donuts.webp");
+  background-image: image-url("products/sachertorte.jpg");
 }
 
 .image3 {
-  background-image: image-url("homes/poundcake.webp");
+  background-image: image-url("products/macharoll.jpg");
 }
 
 .image4 {
-  background-image: image-url("homes/chocolate.webp");
+  background-image: image-url("products/cheesecake.jpg");
 }
 
 .main-introduction {
@@ -69,6 +69,14 @@
   height: 150px;
   margin: 0 30px;
   border-radius: 5%;
+}
+
+.float {
+  transition: box-shadow .5s;
+}
+
+.float:hover {
+  box-shadow: 0 12px 12px gray;
 }
 
 .btn-to-detail {

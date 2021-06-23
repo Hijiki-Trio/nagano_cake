@@ -2,6 +2,17 @@
 
 DMM WEBCAMPのチーム開発で作成したECサイト
 
+## 設計
+
+### アプリケーション詳細設計
+#### 管理者側
+
+<img width="713" alt="スクリーンショット 2021-06-23 10 55 51" src="https://user-images.githubusercontent.com/81577119/123023229-03039b80-d412-11eb-8d73-37e0f25e2e97.png">
+
+#### 会員側
+
+<img width="719" alt="スクリーンショット 2021-06-23 10 56 25" src="https://user-images.githubusercontent.com/81577119/123023080-c2a41d80-d411-11eb-9f64-ecc91a9daeb6.png">
+
 ## 開発環境
 
 * Ruby 2.6.3
@@ -26,6 +37,6 @@ $ rails s
 
 ## 作者
 
-* あむ　　（@Amu-Y）
-* よっしー（@seikin123）
-* あかりん（@imaaa34）
+* あむ
+* よっしー
+* あかりん
