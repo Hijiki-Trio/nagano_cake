@@ -7,11 +7,11 @@ DMM WEBCAMPのチーム開発で作成したECサイト
 ### アプリケーション詳細設計
 #### 管理者側
 
-<img width="703" alt="スクリーンショット 2021-06-23 10 36 54" src="https://user-images.githubusercontent.com/81577119/123022206-6ab8e700-d410-11eb-960c-4389eb75de71.png">
+<img width="713" alt="スクリーンショット 2021-06-23 10 55 51" src="https://user-images.githubusercontent.com/81577119/123023229-03039b80-d412-11eb-8d73-37e0f25e2e97.png">
 
 #### 会員側
 
-<img width="776" alt="スクリーンショット 2021-06-23 10 36 16" src="https://user-images.githubusercontent.com/81577119/123022334-9f2ca300-d410-11eb-84eb-57495996a560.png">
+<img width="719" alt="スクリーンショット 2021-06-23 10 56 25" src="https://user-images.githubusercontent.com/81577119/123023080-c2a41d80-d411-11eb-9f64-ecc91a9daeb6.png">
 
 ## 開発環境
 
