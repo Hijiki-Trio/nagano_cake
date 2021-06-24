@@ -17,8 +17,12 @@ class Public::CartProductsController < ApplicationController
       @cart_product.save
       redirect_to cart_products_path
     else
-      @cart_product.save
-      redirect_to cart_products_path
+      if @cart_product.quantity == nil
+        redirect_to request.referer, error: "個数を選択してください"
+      else
+       @cart_product.save
+       redirect_to cart_products_path
+      end
     end
   end
 
