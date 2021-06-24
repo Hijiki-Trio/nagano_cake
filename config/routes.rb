@@ -38,5 +38,7 @@ Rails.application.routes.draw do
     resources :products
     resources :genres, only: [:index, :edit, :create, :update]
     resources :customers, only: [:index, :show, :edit, :update]  #追加しました。
+    resources :orders, only: [:index, :show, :update]
+    resources :order_products, only: [:update]
   end
 end

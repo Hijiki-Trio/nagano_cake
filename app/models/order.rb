@@ -17,4 +17,17 @@ class Order < ApplicationRecord
   	(price*1.10).round
   end
 
+  def order_product_status_auto_update
+    if self.order_status == "入金確認"
+      self.order_products.each do |order_product|
+        order_product.update_attributes(product_status: "製作待ち")
+      end
+    elsif self.order_status == "入金待ち"
+      self.order_products.each do |order_product|
+        order_product.update_attributes(product_status: "着手不可")
+      end
+    end
+  end
+
+
 end
