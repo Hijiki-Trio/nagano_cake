@@ -1,2 +1,74 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
+<div class="container orders-wrapper">
+  <h3>注文履歴詳細</h3>
+  <% if @order.present? %>
+    <div class="row d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文情報</h4>
+        <table class="table">
+          <tr>
+            <th class="table-active">注文日</th>
+            <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+            <th class="table-active">配送先</th>
+            <td>
+              <%= '〒' + @order.postcode %><br>
+              <%= @order.address %><br>
+              <%= @order.name %>
+            </td>
+          <tr>
+          </tr>
+            <th class="table-active">支払い方法</th>
+            <td><%= @order.payment %></td>
+          <tr>
+          </tr>
+            <th class="table-active">ステータス</th>
+            <td><%= @order.order_status %></td>
+          <tr>
+        </table>
+      </div>
+
+      <div class="col-4">
+        <h4>請求情報</h4>
+        <table class="table">
+          <tr>
+            <th class="table-active">商品合計</th>
+            <td>¥<%= converting_to_jpy(@order.total_price - @order.shipping) %></td>
+          </tr>
+            <th class="table-active">送料</th>
+            <td>¥<%= @order.shipping %></td>
+          <tr>
+          </tr>
+            <th class="table-active">ご請求額</th>
+            <td>¥<%= converting_to_jpy(@order.total_price) %></td>
+          <tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="table mt-5 d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文内容</h4>
+        <table class="table">
+          <tr>
+            <th class="table-active">商品</th>
+            <th class="table-active">単価(税込)</th>
+            <th class="table-active">個数</th>
+            <th class="table-active">小計</th>
+          <% @order_products.each do |order_product| %>
+          </tr>
+            <td><%= order_product.product.name %></td>
+            <td>¥<%= converting_to_jpy(order_product.product.tax_included) %></td>
+            <td><%= order_product.quantity %></td>
+            <td>¥<%= converting_to_jpy(order_product.product.tax_included * order_product.quantity) %></td>
+          <tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-4 text-right pt-5">
+        <%= link_to "＜　注文履歴一覧に戻る", orders_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  <% else %>
+    <h5 class="text-center">注文履歴詳細はありません！</h5>
+  <% end %>
+</div>
