@@ -1,3 +1,15 @@
 // Place all the styles related to the public/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* orders共通
+---------------------------- */
+
+.orders-wrapper {
+  margin: 50px auto;
+}
+
+.orders-wrapper h3 {
+  margin: 20px auto 50px;
+  border-bottom: 1px solid #000000;
+}

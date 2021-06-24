@@ -203,10 +203,10 @@ Product.create!(
 
 Product.create!(
   genre_id: 1,
-  name: 'ブルーベリータルト',
+  name: 'ブルーベリーケーキ',
   detail: 'タルト生地にブルーベリーとラズベリーを飾りました。',
   price: '400',
-  image: open("./app/assets/images/products/berrytart.jpg"),
+  image: open("./app/assets/images/products/blueberrycake.jpg"),
   is_active: true
 )
 
