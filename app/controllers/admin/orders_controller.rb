@@ -2,7 +2,11 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
   
   def index
-    @orders = Order.page(params[:page]).reverse_order
+    if params[:customer_id].nil? #indexページでは個別の注文履歴も表示させるための条件分岐
+     @orders = Order.page(params[:page]).reverse_order
+    else
+     @orders = Order.where(customer_id: params[:customer_id]).page(params[:page]).reverse_order
+    end
   end
   
   def show
