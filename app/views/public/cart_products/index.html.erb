@@ -29,11 +29,11 @@
               <%= f.select :quantity, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5}, :selected => cart_product.quantity, class: "form-control col mr-3" %>
               <%= f.submit "編集", class: "btn btn-sm btn-secondary" %>
             </td>
-            <td>¥<%= converting_to_jpy(cart_product.product.price * cart_product.quantity) %></td>
+            <td>¥<%= converting_to_jpy(cart_product.product.tax_included * cart_product.quantity) %></td>
             <td><%= link_to cart_product_path(cart_product), class: "text-dark", method: :delete do %><i class="fas fa-trash-alt fa-lg"></i><% end %></td>
             <% end %>
           </tr>
-          <% @sum += cart_product.product.price * cart_product.quantity %>
+          <% @sum += cart_product.product.tax_included * cart_product.quantity %>
           <% end %>
         </tbody>
         <tfoot>
