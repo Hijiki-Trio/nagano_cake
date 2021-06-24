@@ -1,8 +1,7 @@
 <div class="container">
   <h3 class="mt-5 mb-3">ログイン</h3>
-
   <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
-    <%= render "customers/shared/error_messages", resource: resource %>
+    <p class="alert text-danger"><%= alert %></p>
     <table class="my-3 login-customer">
       <tr>
         <td>メールアドレス</td>

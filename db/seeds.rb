@@ -159,7 +159,7 @@ Product.create!(
 Product.create!(
   genre_id: 4,
   name: 'スイートポテト',
-  detail: '甘さ控えめなしっとり濃厚なスイートポテト2個入りです。',
+  detail: '甘さ控えめでしっとり濃厚なスイートポテト2個入りです。',
   price: '350',
   image: open("./app/assets/images/products/sweetpotato.jpg"),
   is_active: true
