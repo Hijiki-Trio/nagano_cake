@@ -1,5 +1,6 @@
 <div class="container show-wrapper">
   <div class="row">
+    <%= flash[:error] %>
     <div class="product-show-image-wrapper col-6">
       <%= attachment_image_tag @product, :image, class: 'product-show-image' %>
     </div>

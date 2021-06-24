@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :customers
+  devise_for :customers, controllers: {
+  registrations: 'customers/registrations'
+  }
 
   #会員側のルーティング
   scope module: :public do
@@ -21,9 +23,9 @@ Rails.application.routes.draw do
       delete 'cart_products/:id' => 'cart_products#destroy'
 
       get 'orders/complete' => 'orders#complete'
-    resources :orders, only: [:index, :show, :create, :new] 
+    resources :orders, only: [:index, :show, :create, :new]
       post 'orders/confirm' => 'orders#confirm'
-      
+
 
 
     resources :shipping_addresses, only: [:index, :create, :edit, :update, :destroy]
