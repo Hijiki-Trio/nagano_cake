@@ -1,26 +1,36 @@
-<h3>ジャンル一覧・追加</h3>
+<main class="bacimage">
+  <div class="title-box">
+    <h4 class="title-text">ジャンル一覧・追加</h4>
+  </div>
 
-<%= form_with model: [:admin, @genre], local:true do |f| %>
-<%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control" %>
-<%= f.submit '新規登録' %>
-<% end %>
-
-
-<p>ジャンル名</p>
-<table class="table table-striped shadow p-3 mb-5 bg-white rounded">
-  <thead>
-    <th>
-      <td>ジャンル</td>
-    </th>
-  </thead>
-  <tbody>
-    <% @genres.each do |genre| %>
-    <tr>
-      <th>
-        <td><%= genre.name %></td>
-        <td><%= link_to "編集", edit_admin_genre_path(genre.id) %></td>
-      </th>
-    </tr>
+  <div class="niw-item">
+    <%= form_with model: [:admin, @genre], local:true do |f| %>
+    <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control" %>
+    <%= f.submit '新規登録' %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <div class="btnripple">
+    <div class="date">
+      <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
+        <thead>
+          <th>
+            <td>ジャンル</td>
+          </th>
+        </thead>
+        <tbody>
+          <% @genres.each do |genre| %>
+          <tr>
+            <th>
+              <td><%= genre.name %></td>
+              <td><%= link_to "編集", edit_admin_genre_path(genre.id) %></td>
+            </th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+</main>

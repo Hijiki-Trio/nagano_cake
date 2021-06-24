@@ -1,5 +1,7 @@
 <div class="bacimage">
-  <h4 class="title-text">商品詳細</h4>
+  <div class="title-box">
+    <h4 class="title-text">商品詳細</h4>
+  </div>
   <div class="item-show">
       <div class="item-show-image">
         <%= attachment_image_tag @product, :image, format: 'jpeg', size: "350x500" %>
@@ -32,7 +34,8 @@
             </td>
           </tr>
           <tr>
-            <td><%= link_to "編集", edit_admin_product_path(@product.id), class:"btn btn-success" %></td>
+            <td></td>
+            <td><%= link_to edit_admin_product_path(@product.id) do %><i class="fas fa-edit fa-3x text-dark"></i><% end %></td>
           </tr>
         </table>
       </div>
