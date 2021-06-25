@@ -5,8 +5,10 @@
 
   <div class="niw-item">
     <%= form_with model: [:admin, @genre], local:true do |f| %>
-    <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control" %>
-    <%= f.submit '新規登録' %>
+    <div class="d-flex">
+      <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control mr-3" %>
+      <%= f.submit '　新規登録　', class: "btn  btn-sm btn-secondary" %>
+    </div>
     <% end %>
   </div>
 
@@ -23,7 +25,7 @@
           <tr>
             <th>
               <td><%= genre.name %></td>
-              <td><%= link_to "編集", edit_admin_genre_path(genre.id) %></td>
+              <td><%= link_to edit_admin_genre_path(genre.id), class: "text-dark" do %><i class="fas fa-edit"></i><% end %></td>
             </th>
           </tr>
           <% end %>
