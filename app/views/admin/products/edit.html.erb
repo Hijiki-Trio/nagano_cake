@@ -1,8 +1,9 @@
 <div class="bacimage">
-  <div class="title-box">
-    <h4 class="title-text">商品編集</h4>
-  </div>
-
+  <div class="container">
+    <div class="title-box">
+      <h4 class="title-text">商品編集</h4>
+    </div>
+    <%= render 'customers/shared/error_messages', resource: @product %>
     <div class="niw-item">
       <div class="niw-box p-2">
         <%= form_with model: [:admin, @product], local:true do |f| %>
@@ -39,4 +40,5 @@
         <% end %>
       </div>
     </div>
+  </div>
 </div>

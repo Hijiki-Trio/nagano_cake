@@ -1,37 +1,38 @@
 <main class="bacimage">
-  <div class="title-box">
-    <h4 class="title-text">ジャンル一覧・追加</h4>
-  </div>
-
-  <div class="niw-item">
-    <%= form_with model: [:admin, @genre], local:true do |f| %>
-    <div class="d-flex">
-      <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control mr-3" %>
-      <%= f.submit '　新規登録　', class: "btn  btn-sm btn-secondary" %>
+  <div class="container">
+    <div class="title-box">
+      <h4 class="title-text">ジャンル一覧・追加</h4>
     </div>
-    <% end %>
-  </div>
+    <%= render 'customers/shared/error_messages', resource: @genre %>
+    <div class="niw-item">
+      <%= form_with model: [:admin, @genre], local:true do |f| %>
+      <div class="d-flex">
+        <%= f.text_field :name, placeholder: "ジャンル名", size: "30", class: "form-control mr-3" %>
+        <%= f.submit '　新規登録　', class: "btn  btn-sm btn-secondary" %>
+      </div>
+      <% end %>
+    </div>
 
-  <div class="btnripple">
-    <div class="date">
-      <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
-        <thead>
-          <th>
-            <td>ジャンル</td>
-          </th>
-        </thead>
-        <tbody>
-          <% @genres.each do |genre| %>
-          <tr>
+    <div class="btnripple">
+      <div class="date">
+        <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
+          <thead>
             <th>
-              <td><%= genre.name %></td>
-              <td><%= link_to edit_admin_genre_path(genre.id), class: "text-dark" do %><i class="fas fa-edit"></i><% end %></td>
+              <td>ジャンル</td>
             </th>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @genres.each do |genre| %>
+            <tr>
+              <th>
+                <td><%= genre.name %></td>
+                <td><%= link_to edit_admin_genre_path(genre.id), class: "text-dark" do %><i class="fas fa-edit"></i><% end %></td>
+              </th>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-    <div class="row justify-content-center"><%= paginate @genres %></div>
 </main>
