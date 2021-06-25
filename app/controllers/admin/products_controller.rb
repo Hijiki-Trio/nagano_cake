@@ -11,12 +11,12 @@ class Admin::ProductsController < ApplicationController
      render 'new'
     end
   end
-  
+
   def new
     @product = Product.new
     @genres = Genre.all
   end
-    
+
   def index
     @products = Product.page(params[:page]).per(10)
     @genres = Genre.all
@@ -27,12 +27,12 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @genres = Genre.all
   end
-  
+
   def edit
     @product = Product.find(params[:id])
     @genres = Genre.all
   end
-  
+
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
@@ -41,10 +41,10 @@ class Admin::ProductsController < ApplicationController
      render :edit
     end
   end
-  
-  
+
+
  private
- 
+
   def product_params
     params.require(:product).permit(:name, :detail, :image, :price, :genre_id, :is_active)
   end
