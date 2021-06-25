@@ -1,31 +1,41 @@
-<p id="notice"></p>
-<div class="container">
-  <h2>会員一覧</h2>
+<div class="bacimage">
+  <div class="title-box">
+    <p id="notice"></p>
+    <div class="container">
+      <div class="title-box">
+        <h4 class="title-text">会員一覧</h4>
+      </div>
 
-  <table class="table table-striped customer-info-table">
-    <thead>
-      <tr>
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>メールアドレス</th>
-        <th>ステータス</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.id %></td>
-        <td><%= link_to "#{customer.last_name + customer.first_name}", admin_customer_path(customer) %></td>
-        <td><%= customer.email %></td>
-      <td>
-      <% if customer.is_valid == true %>
-        <span class="text-success">有効</span>
-      <% else %>
-        <span class="text-secondary">退会済</span>
-      <% end %>
-      </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <div class="btnripple">
+        <div class="date">
+          <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
+            <thead>
+              <tr>
+                <th>会員ID</th>
+                <th>氏名</th>
+                <th>メールアドレス</th>
+                <th>ステータス</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @customers.each do |customer| %>
+              <tr>
+                <td><%= customer.id %></td>
+                <td><%= link_to "#{customer.last_name + customer.first_name}", admin_customer_path(customer) %></td>
+                <td><%= customer.email %></td>
+              <td>
+              <% if customer.is_valid == true %>
+                <span class="text-success">有効</span>
+              <% else %>
+                <span class="text-secondary">退会済</span>
+              <% end %>
+              </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
