@@ -1,15 +1,15 @@
 <p id="notice"></p>
 <div class="container">
   <div class="row">
-    <h3><%= "#{@customer.last_name + @customer.first_name}さんの会員詳細" %></h3>
+    <h3 class="mt-5"><%= "#{@customer.last_name + @customer.first_name}さんの会員詳細" %></h3>
   </div>
-  
+
   <table class="my-3 new-customer">
     <tr class="row my-3">
       <td class="col-3">会員ID</td>
       <td class="col-8"><%= @customer.id %></td>
     </tr>
-      
+
     <tr class="row my-3">
       <td class="col-3">氏名</td>
       <td class="col-8"><%= @customer.last_name %> <%= @customer.first_name %></td>
@@ -44,9 +44,9 @@
         <% end %>
       </td>
     </tr>
-    <tr class="row my-3">
-      <td><%= link_to "編集する", edit_admin_customer_path(@customer.id), class:"btn btn-secondary btn-block fas fa-user-cog" %></td>
-      <td><%= link_to "注文履歴一覧を見る", admin_orders_path, class:"btn btn-primary btn-block fas fa-user-cog" %></td> 
+    <tr class="row mt-5 mb-3">
+      <td class="mr-5"><%= link_to "編集する", edit_admin_customer_path(@customer.id), class:"btn btn-secondary btn-block mr-5" %></td>
+      <td><%= link_to "注文履歴一覧を見る", admin_orders_path, class:"btn btn-primary btn-block mr-5" %></td>
     </tr>
     </table>
   </div>

@@ -10,7 +10,7 @@
             <th class="table-active">購入者</th>
             <td>
               <%= link_to admin_customer_path(@order.customer) do %>
-                <%= @order.customer.last_name + @order.customer.first_name %>
+                <%= @order.customer.last_name + " " + @order.customer.first_name %>
               <% end %>
             </td>
           </tr>
@@ -36,7 +36,7 @@
           </tr>
         </table>
       </div>
-    
+
       <div class="col-4">
        <h4>請求情報</h4>
        <table class="table">
@@ -67,7 +67,7 @@
         <th class="table-active">小計</th>
         <th class="table-active">製作<br>ステータス</th>
         <th class="table-active"></th>
-    
+
       <% @order_products.each do |order_product| %>
       </tr>
         <td><%= order_product.product.name %></td>
@@ -87,7 +87,7 @@
         <%= link_to "＜　注文履歴一覧に戻る", admin_orders_path, class: "btn btn-outline-secondary" %>
       </div>
 
-   
+
 
 
 

@@ -1,8 +1,9 @@
 <p id="notice"></p>
-<h2><%= "#{@customer.last_name + @customer.first_name}さんの会員情報" %></h2>
-
 <div class="container">
-
+  <div class="row">
+    <h3 class="mt-5"><%= "#{@customer.last_name + @customer.first_name}さんの会員情報編集" %></h3>
+    <%= render 'customers/shared/error_messages', resource: @customer %>
+  </div>
 
 <%= form_with model: @customer, url: admin_customer_path, local:true do |f| %>
     <table class="my-3 new-customer">
@@ -76,7 +77,7 @@
           <td><%= f.label :"会員ステータス", class: "control-label" %></td>
             <td>
               <%= f.radio_button :is_valid, true %>
-              <%= f.label :is_valid, "有効"%>
+              <%= f.label :is_valid, "有効", class: "mr-3"%>
               <%= f.radio_button :is_valid, false %>
               <%= f.label :is_valid, "退会" %>
             </td>
@@ -84,11 +85,11 @@
         <tr>
           <td></td>
           <td>
-            <div class="form-group">
+            <div class="form-group mt-5 mb-3">
               <%= f.submit "変更を保存", class: "btn btn-success" %>
             </div>
             <% end %>
           </td>
-        </tr> 
+        </tr>
   </table>
 </div>
