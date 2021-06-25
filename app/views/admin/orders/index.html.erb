@@ -1,11 +1,10 @@
-<div class="row m-4">
-  <div class="col">
-    <h5 class="d-inline bg-gray pr-3 pl-3 page-title">注文履歴一覧</h5>
+<main class="bacimage">
+  <div class="title-box">
+    <h4 class="title-text">注文履歴一覧</h4>
   </div>
-</div>
-<div class="row page-title">
-  <div class="col-sm-10 m-auto">
-    <table class="table">
+    <div class="btnripple">
+    <div class="date">
+    <table class="table table-striped shadow p-3 mb-5 bg-white rounded">
       <thead>
         <tr class="bg-gray">
           <th>購入日時</th>
@@ -25,10 +24,16 @@
         <% end %>
       </tbody>
     </table>
+      <div class="row">
+        <div class="col-sm-4 m-auto">
+          <%= paginate @orders %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-sm-4 m-auto">
-    <%= paginate @orders %>
-  </div>
-</div>
+</main>
+
+
+  
+
+

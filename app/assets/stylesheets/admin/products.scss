@@ -43,9 +43,12 @@
 }
 
 .niw-box {
+  width: 500px;
+  height: 650px;
   background:rgba(255,255,255,0.8);
   overflow: hidden;
-
+  box-shadow: 10px 5px 5px silver;
+  position:relative;
 }
 
 .item-show {
