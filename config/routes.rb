@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :customers, controllers: {
-  registrations: 'customers/registrations'
+  registrations: 'customers/registrations',
+  sessions: 'customers/sessions'
   }
 
   #会員側のルーティング
