@@ -1,3 +1,25 @@
 // Place all the styles related to the public/shipping_address controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* shipping_address#index
+---------------------------- */
+
+.shipping_index_wrapper {
+  margin: 50px auto;
+}
+
+.shipping_index_wrapper h3 {
+  margin: 20px auto;
+}
+
+/* shipping_address#edit
+---------------------------- */
+
+.shipping_edit_wrapper {
+  margin: 50px auto;
+}
+
+.shipping_edit_wrapper h3 {
+  margin: 20px auto;
+}

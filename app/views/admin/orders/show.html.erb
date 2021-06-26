@@ -1,2 +1,95 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<div class="container orders-wrapper">
+
+    <h3>注文履歴詳細</h3>
+
+    <div class="row d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文情報</h4>
+        <table class="table">
+          <tr>
+            <th class="table-active">購入者</th>
+            <td>
+              <%= link_to admin_customer_path(@order.customer) do %>
+                <%= @order.customer.last_name + " " + @order.customer.first_name %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th class="table-active">注文日</th>
+            <td><%= @order.created_at.strftime('%Y/%m/%d')%></td>
+          </tr>
+          <tr>
+            <th class="table-active">配送先</th>
+            <td><%= "〒" + @order.postcode + " " + @order.address %><br><%= @order.name %></td>
+          </tr>
+          <tr>
+            <th class="table-active">支払い方法</th>
+            <td><%= @order.payment %></td>
+          </tr>
+          <tr>
+            <th class="table-active">注文ステータス</th>
+              <%= form_with model: [:admin,@order], url: admin_order_path(@order),method: :patch, local: true do |f|%>
+            <td>
+              <%= f.select :order_status, Order.order_statuses_i18n.invert, {prompt: 0}, class:"form-control form-control-sm col-6"  %></td>
+            <td><%= f.submit "更新", class: "btn btn-success" %></td>
+              <% end %>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-4">
+       <h4>請求情報</h4>
+       <table class="table">
+        <tr>
+          <th class="table-active">商品合計</th>
+          <td>¥<%= converting_to_jpy(@order.total_price - @order.shipping) %></td>
+        </tr>
+        <tr>
+          <th class="table-active">送料</th>
+          <td>¥<%= @order.shipping %></td>
+        </tr>
+        <tr>
+          <th class="table-active">請求金額合計</th>
+          <td>¥<%= converting_to_jpy(@order.total_price) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+    <div class="table mt-5 d-flex justify-content-center">
+      <div class="mr-5 col-7">
+        <h4>注文内容</h4>
+        <table class="table">
+      <tr>
+        <th class="table-active">商品名</th>
+        <th class="table-active">単価（税込）</th>
+        <th class="table-active">数量</th>
+        <th class="table-active">小計</th>
+        <th class="table-active">製作<br>ステータス</th>
+        <th class="table-active"></th>
+
+      <% @order_products.each do |order_product| %>
+      </tr>
+        <td><%= order_product.product.name %></td>
+        <td>¥<%= converting_to_jpy(order_product.product.tax_included) %></td>
+        <td><%= order_product.quantity %></td>
+        <td>¥<%= converting_to_jpy(order_product.product.tax_included * order_product.quantity) %></td>
+          <%= form_with model: [:admin,order_product], url: admin_order_product_path(order_product),method: :patch, local: true do |f|%>
+           <td><%= f.select :product_status, OrderProduct.product_statuses_i18n.invert, {prompt: 0}, class:"form-control form-control-sm col-12"  %>
+           <td><%= f.submit "更新", class: "btn btn-success" %></td>
+           </td>
+          <% end %>
+      <tr>
+      <% end %>
+   </table>
+  </div>
+      <div class="col-4 text-right pt-5">
+        <%= link_to "＜　注文履歴一覧に戻る", admin_orders_path, class: "btn btn-outline-secondary" %>
+      </div>
+
+
+
+
+
+
+

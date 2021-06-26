@@ -1,8 +1,22 @@
 <div class="container about-wrapper">
-  <%= image_tag('homes/shortcake.jpg', class: 'about-image') %>
-  <p>
-    Nagano Cakeでは、厳選した素材と旬を取り入れたフルーツを使用しています。<br>
-    パティシエが一つ一つ心を込めて手作りしたスイーツで、素敵な午後のひと時をお過ごし下さい。<br>
-    全国配送も承っております。注文には<%= link_to "こちら", new_customer_registration_path %>から会員登録が必要です。
-  </p>
+  <div class="about-detail-wrapper mb-5">
+    <div class="about-detail1">
+      <p class="about-p p-5">
+        Nagano Cakeでは、厳選した素材と<br>
+        旬を取り入れた果物を使用しています。<br><br>
+        多くのお客様にお届けできるよう、<br>
+        全国配送も承っております。
+      </p>
+    </div>
+  </div>
+  <div class="about-detail-wrapper">
+    <div class="about-detail2">
+      <p class="about-p p-5">
+        パティシエが一つ一つ心を込めて<br>
+        手作りしたスイーツで、<br>
+        素敵な午後のひと時をお過ごし下さい。<br><br>
+        注文には<%= link_to "こちら", new_customer_registration_path %>から会員登録が必要です。
+      </p>
+    </div>
+  </div>
 </div>

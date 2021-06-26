@@ -1,0 +1,44 @@
+<main class="bacimage">
+  <div class="container">
+    <div class="title-box">
+      <h4 class="title-text">新規投稿</h4>
+    </div>
+    <%= render 'customers/shared/error_messages', resource: @product %>
+    <div class="niw-item">
+      <div class="niw-box p-2">
+        <%= form_with model: [:admin, @product], local:true do |f| %>
+        <div class="niw-bow-wrapper">
+          <h4 class="mt-3">商品画像</h4>
+          <div class="sub-text"><%= f.attachment_field :image %></div>
+        </div>
+        <div class="niw-bow-wrapper">
+          <h4>商品名</h4>
+      　　<%= f.text_field :name, placeholder: "商品名", size: "30", class: "form-control" %>
+      　  </div>
+        <div class="niw-bow-wrapper">
+          <h4>商品説明</h4>
+          <%= f.text_area :detail, placeholder: "ここに説明文を記述します", size: "30x3", class: "form-control" %>
+        </div>
+        <div class="niw-bow-wrapper">
+          <h4>ジャンル</h4>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--選択してください--", size: "30", class: "form-control" %>
+        </div>
+        <div class="niw-bow-wrapper">
+          <h4>税抜価格</h4>
+          <div class="d-flex">
+            <%= f.text_field :price, placeholder: "1000", size: "30", class: "form-text" %>　円
+          </div>
+        </div>
+        <div class="niw-bow-wrapper">
+          <h4><%= f.label :"販売ステータス", class: "control-label" %></h4>
+          <%= f.radio_button :is_active, true %>
+          <%= f.label :is_active, "販売中"%>
+          <%= f.radio_button :is_active, false %>
+          <%= f.label :is_active, "販売停止中" %>
+        </div>
+        <div class="my-3"><%= f.submit '新規登録', class: "btn btn-success" %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
